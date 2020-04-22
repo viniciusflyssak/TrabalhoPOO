@@ -1,0 +1,13 @@
+unit uMoto;
+
+interface
+   Type
+    TMotoCadastro = Class
+    Modelo : String;
+    Marca : String;
+    Ano : Integer;
+    Preco : Integer;
+    End;
+implementation
+
+end.

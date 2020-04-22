@@ -1,0 +1,61 @@
+unit uCadastroVeiculo;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uCarro, uMoto;
+
+type
+  TCadVeiculos = class(TForm)
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    EdtModelo: TEdit;
+    EdtAno: TEdit;
+    EdtPreco: TEdit;
+    EdtMarca: TEdit;
+    BtnCadastrarCarro: TButton;
+    EdtModeloM: TEdit;
+    EdtAnoM: TEdit;
+    EdtMarcaM: TEdit;
+    EdtPrecoM: TEdit;
+    BtnCadastrarMoto: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    procedure BtnCadastrarCarroClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    Carro : Tcarro;
+  end;
+
+var
+  CadVeiculos: TCadVeiculos;
+
+implementation
+
+{$R *.dfm}
+
+procedure TCadVeiculos.BtnCadastrarCarroClick(Sender: TObject);
+begin
+  Carro := TCarro.Create;
+  if EdtModelo.Text <> '' then
+    Carro.Modelo := EdtModelo.Text;
+  if EdtAno.Text <> '' then
+    Carro.Ano:= Strtointdef(EdtAno.Text, 0);
+  if EdtPreco.text <> '' then
+    Carro.Preco := Strtointdef(EdtPreco.Text, 0);
+    if EdtModelo.Text <> '' then
+    Carro.Marca := EdtMarca.Text;
+
+end;
+
+end.

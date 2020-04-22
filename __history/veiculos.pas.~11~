@@ -1,0 +1,24 @@
+unit veiculos;
+
+interface
+
+uses uCarro, dialogs, System.SysUtils;
+
+type
+  tvender = class(Tcarro)
+    descricao: string;
+    parcela: integer;
+    procedure aviso;
+  end;
+
+implementation
+
+{ vender }
+
+procedure tvender.aviso;
+begin
+  showmessage('O veículo com a descrição ' + descricao + ', no valor de ' +
+    inttostr(preco) + ' reais, foi vendido. Suas parcelas são de '+inttostr(parcela)+' reais');
+end;
+
+end.

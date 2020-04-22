@@ -1,0 +1,23 @@
+unit uCarro;
+
+interface
+   Type
+    TCarro = Class
+    Modelo : String;
+    Marca : String;
+    Ano : Integer;
+    Preco : Integer;
+    procedure mensagem;
+    End;
+
+implementation
+uses dialogs;
+{TCarro}
+{ TCarro }
+
+procedure TCarro.mensagem;
+begin
+    showmessage('O veículo do modelo '+modelo+', pertencente a marca '+marca+', com sua fabricação no ano de, Com o valor de Reais, foi cadastrado');
+end;
+
+end.

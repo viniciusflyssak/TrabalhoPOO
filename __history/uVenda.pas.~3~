@@ -1,0 +1,11 @@
+unit uVenda;
+
+interface
+ uses uCarro;
+ type
+ venda= class (TCarro)
+   descricao: string
+ end;
+implementation
+
+end.

@@ -1,0 +1,56 @@
+unit uVendas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uVender;
+
+type
+  TVendas = class(TForm)
+    EdtDesc: TEdit;
+    EdtPreco: TEdit;
+    Button1: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    CBPagamento: TComboBox;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    vender: Tvender end;
+
+  var
+    Vendas: TVendas;
+
+implementation
+
+{$R *.dfm}
+
+procedure TVendas.Button1Click(Sender: TObject);
+var
+  valor: string;
+begin
+  vender := Tvender.create;
+  if EdtDesc.Text <> '' then
+    vender.descricao := EdtDesc.Text;
+  if EdtPreco.Text <> '' then
+    vender.preco := Strtointdef(EdtPreco.Text, 0);
+  if CBPagamento.ItemIndex = 0 then
+    vender.parcela := vender.preco;
+  if CBPagamento.ItemIndex = 1 then
+    vender.parcela := vender.preco / 12;
+  if CBPagamento.ItemIndex = 2 then
+    vender.parcela := vender.preco / 24;
+  if CBPagamento.ItemIndex = 3 then
+    vender.parcela := vender.preco / 36;
+  valor := formatfloat('0.##', vender.parcela);
+  vender.parcela := strtofloat(valor);
+  vender.aviso
+end;
+
+end.
+

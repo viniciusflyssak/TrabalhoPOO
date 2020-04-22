@@ -1,0 +1,14 @@
+unit uCarro;
+
+interface
+   Type
+    TCarro = Class
+    Modelo : String;
+    Marca : String;
+    Ano : Integer;
+    Preco : Integer;
+    End;
+
+implementation
+uses dialogs;
+end.
