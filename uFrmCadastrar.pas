@@ -62,9 +62,6 @@ begin
       Funcionario.Ganho := Funcionario.Salario + (Gestor.HoraExtra * 25)
     else
       Funcionario.Ganho := Funcionario.Salario + (Vendedor.Comissao * 0.15);
-     Funcionarios[Contador] := Funcionario;
-  end;
-  ShowMessage('Total ganho: ' + FloatToStr(Funcionario.Ganho) + ' R$');
-end;
-
+  ShowMessage('Total ganho: ' + FloatToStr(Funcionario.Ganho) + ' R$');end;
+Funcionarios[Contador] := Funcionario;
 end.
